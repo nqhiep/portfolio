@@ -1,0 +1,23 @@
+@use "../variable" as *;
+
+.button {
+  display: inline-block;
+  background-color: $title-color;
+  color: $container-color;
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-weight: $font-medium;
+
+  &:hover {
+    background-color: $title-color-dark;
+  }
+
+  &__icon {
+    margin-left: $mb-0-5;
+  }
+
+  &--flex {
+    display: inline-flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,53 @@
+@use "./assets/scss" as *;
+
+body {
+  // margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  // padding: 40px 40px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $body-color;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3 {
+  color: $title-color;
+  font-weight: $font-semi-bold;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
