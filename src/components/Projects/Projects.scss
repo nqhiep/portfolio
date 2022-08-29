@@ -1,0 +1,158 @@
+@use "../../assets/scss/variable" as *;
+@use "../../assets/scss/abstracts/mixins" as *;
+
+.projects {
+  &__container {
+    grid-template-columns: repeat(3, 270px);
+    justify-content: center;
+    column-gap: 1.8rem;
+
+    @include respond(big-desktop) {
+      grid-template-columns: repeat(3, 218px);
+    }
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone) {
+      grid-template-columns: max-content;
+    }
+  }
+
+  &__content {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $container-color;
+    padding: 6rem 0 2rem 2.5rem;
+
+    @include respond(tab-land) {
+      padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+    }
+
+    @include respond(phone) {
+      padding-right: 6rem;
+    }
+  }
+
+  &__icon {
+    display: block;
+    font-size: 2rem;
+    color: $title-color;
+    margin-bottom: $mb-1;
+
+    @include respond(big-desktop) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__title {
+    font-size: $h3-font-size;
+    margin-bottom: $mb-1;
+    font-weight: $font-medium;
+  }
+
+  &__modal {
+    display: none;
+  }
+
+  &__button {
+    color: $title-color;
+    font-size: $small-font-size;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(0.25rem);
+    }
+  }
+
+  &__button-icon {
+    font-size: 1rem;
+  }
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: $z--modal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  &__modal-content {
+    width: 500px;
+    position: relative;
+    background-color: $container-color;
+    padding: 4.5rem 2.5rem 2.5rem;
+    border-radius: 1.5rem;
+
+    @include respond(tab-port) {
+      padding: 4.5rem 1.5rem 2.5rem;
+    }
+  }
+
+  &__modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: $title-color;
+    cursor: pointer;
+  }
+
+  &__modal-title,
+  &__modal-description {
+    text-align: center;
+  }
+
+  &__modal-title {
+    font-size: $h3-font-size;
+    font-weight: $font-medium;
+    margin-bottom: $mb-1;
+  }
+
+  &__modal-description {
+    font-size: $small-font-size;
+    padding: 0 3.5rem;
+    margin-bottom: $mb-2;
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
+  }
+
+  &__modal-projects {
+    row-gap: 0.75rem;
+  }
+
+  &__modal-service {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+
+  &__modal-icon {
+    color: $title-color;
+    font-size: $small-font-size;
+  }
+
+  &__modal-info {
+    font-size: $small-font-size;
+  }
+}
+
+.active-modal {
+  opacity: 1;
+  visibility: visible;
+}

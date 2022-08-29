@@ -12,10 +12,9 @@ export const Data = () => {
       </h1>
       <h3 className="home__subtitle">Software Enginerring</h3>
       <p className="home__description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-        aspernatur quos dolorem ipsum voluptas? Deserunt sapiente facere
-        impedit, qui necessitatibus in rerum voluptate ullam quasi, assumenda
-        ipsum eligendi ipsa beatae?
+        I am a hardworking and dedicated individual with a great passion for
+        becoming a software engineer. I am eager to learn new things to grow and
+        further improve my skills.
       </p>
       <a href="#contact" className="button button--flex">
         Say Hello

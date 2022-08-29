@@ -1,30 +1,12 @@
-@use "../../assets/scss" as *;
+@use "../../assets/scss/variable" as *;
+@use "../../assets/scss/abstracts/mixins" as *;
 
 .skills {
-  &__container {
-    grid-template-columns: repeat(2, 350px);
-    column-gap: 3rem;
-    justify-content: center;
-
-    @include respond(tab-land) {
-      grid-template-columns: max-content;
-      row-gap: 2rem;
-    }
-
-    @include respond(tab-port) {
-      grid-template-columns: 1fr;
-    }
-  }
-
   &__content {
     background-color: $container-color;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 2rem 4rem;
     border-radius: 1.25rem;
-
-    @include respond(tab-port) {
-      padding: 1.5rem;
-    }
   }
 
   &__title {
@@ -37,22 +19,29 @@
   &__box {
     display: flex;
     justify-content: center;
-    column-gap: 2.5rem;
-
-    @include respond(phone) {
-      column-gap: 1.25rem;
-    }
   }
 
   &__group {
-    display: grid;
-    align-items: flex-start;
-    row-gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include respond(phone) {
+      display: grid;
+    }
   }
 
   &__data {
     display: flex;
     column-gap: 0.5rem;
+    align-items: center;
+    align-self: flex-start;
+    width: 8rem;
+    height: 5rem;
+
+    @include respond(phone) {
+      width: auto;
+    }
   }
 
   .bx-badge-check {

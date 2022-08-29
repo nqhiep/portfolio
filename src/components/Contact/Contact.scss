@@ -1,0 +1,137 @@
+@use "../../assets/scss/variable" as *;
+@use "../../assets/scss/abstracts/mixins" as *;
+
+.contact {
+  &__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 6rem;
+    padding-bottom: 3rem;
+
+    @include respond(big-desktop) {
+      column-gap: 3rem;
+    }
+
+    @include respond(tab-land) {
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: $h3-font-size;
+    margin-bottom: $mb-1-5;
+  }
+
+  &__info {
+    display: grid;
+    row-gap: 1rem;
+    grid-template-columns: 300px;
+
+    @include respond(tab-land) {
+      justify-content: center;
+    }
+  }
+
+  &__form {
+    width: 360px;
+
+    @include respond(tab-land) {
+      margin: 0 auto;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    background-color: $container-color;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    text-align: center;
+  }
+
+  &__card-icon {
+    font-size: 2rem;
+    color: $title-color;
+    margin-bottom: $mb-0-25;
+  }
+
+  &__card-title,
+  &__card-data {
+    font-size: $small-font-size;
+  }
+
+  &__card-title {
+    font-weight: $font-medium;
+  }
+
+  &__card-data {
+    display: block;
+    margin-bottom: $mb-0-75;
+  }
+
+  &__button {
+    color: $text-color;
+    font-size: $small-font-size;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.25rem;
+
+    &:hover {
+      transform: translate(0.25rem);
+    }
+  }
+
+  &__button-icon {
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+
+  &__form {
+    width: 360px;
+  }
+
+  &__form-div {
+    position: relative;
+    margin-bottom: $mb-2;
+    height: 4rem;
+  }
+
+  &__form-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: none;
+    color: $text-color;
+    outline: none;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    z-index: 1;
+  }
+
+  &__form-tag {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    font-size: $small-font-size;
+    padding: 0.25rem;
+    background-color: $body-color;
+    z-index: 10;
+  }
+
+  &__form-area {
+    height: 11rem;
+
+    textarea {
+      resize: none;
+    }
+  }
+}

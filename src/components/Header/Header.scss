@@ -7,6 +7,7 @@
   left: 0;
   z-index: $z--fixed;
   background-color: $body-color;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.25);
 
   @include respond(tab-land) {
     top: initial;
@@ -17,7 +18,7 @@
 .nav {
   height: calc(10px + 1.5rem);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   column-gap: 1rem;
 
@@ -83,7 +84,6 @@
     @include respond(tab-land) {
       position: fixed;
       bottom: -100%;
-      // bottom: 0;
       left: 0;
       width: 100%;
       background-color: $body-color;
@@ -119,8 +119,16 @@
     }
   }
 
+  .active-link {
+    font-weight: $font-bold;
+  }
+
   .active-link,
   .nav__link:hover {
     color: $title-color-dark;
+  }
+
+  .scroll-header {
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
   }
 }
